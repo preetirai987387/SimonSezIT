@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simon Sez IT - MS Office Tutorial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #2c3e50, #3498db);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: white;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: #34495e;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #3498db;
+    }
+
+    /* Banner */
+    .banner {
+      text-align: center;
+      margin: 2rem auto;
+      max-width: 1200px;
+    }
+
+    .banner img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .banner img:hover {
+      transform: scale(1.02);
+    }
+
+    /* Content */
+    .content {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #2c3e50;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      width: 50px;
+      height: 3px;
+      background-color: #3498db;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+    }
+
+    h3 {
+      color: #34495e;
+      font-size: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      padding: 0.5rem 0;
+      font-size: 1rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    ul li::before {
+      content: '✔';
+      color: #3498db;
+      position: absolute;
+      left: 0;
+    }
+
+    /* Sections */
+    .excel-section, .word-section, .ppt-section, .outlook-section, .youtube-section {
+      margin-top: 3rem;
+      padding: 1.5rem;
+      border-radius: 8px;
+      background-color: #f9fbfc;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .excel-section:hover, .word-section:hover, .ppt-section:hover, .outlook-section:hover, .youtube-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .excel-section img, .word-section img, .ppt-section img, .outlook-section img, .youtube-section img {
+      max-width: 120px;
+      margin: 1rem auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .excel-section img:hover, .word-section img:hover, .ppt-section img:hover, .outlook-section img:hover, .youtube-section img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Steps */
+    .excel-step {
+      background: #ffffff;
+      padding: 1rem;
+      margin: 0.5rem 0;
+      border-left: 4px solid #3498db;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      transition: background-color 0.3s ease;
+    }
+
+    .excel-step:hover {
+      background-color: #e6f0fa;
+    }
+
+    .excel-step strong {
+      color: #2c3e50;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: white; /* Changed to white */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .content {
+        padding: 1rem;
+      }
+
+      .banner img {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Simon Sez IT</h1>
+    <p>Master MS Office with Easy-to-Follow Tutorials</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#excel">MS Excel</a></li>
+      <li><a href="#word">MS Word</a></li>
+      <li><a href="#ppt">MS PowerPoint</a></li>
+      <li><a href="#outlook">MS Outlook</a></li>
+      <li><a href="#youtube">YouTube Channel</a></li>
+    </ul>
+  </nav>
+
+  <div class="banner">
+    <img src="https://ms-excel.pages.dev/msoffice.png" alt="MS Office Image">
+  </div>
+
+  <div class="content">
+    <h2>Welcome to MS Office Tutorials</h2>
+    <p>
+      Microsoft Office is the industry-standard suite for productivity, empowering professionals, students, and businesses to create, analyze, and communicate effectively. Whether you're drafting a report, analyzing data, or presenting ideas, MS Office has the tools to get the job done.
+    </p>
+    <ul>
+      <li><strong>MS Word</strong> – Craft professional documents with ease</li>
+      <li><strong>MS Excel</strong> – Transform data into actionable insights</li>
+      <li><strong>MS PowerPoint</strong> – Design impactful presentations</li>
+      <li><strong>MS Outlook</strong> – Streamline email and time management</li>
+    </ul>
+
+    <h2>Why Learn with Simon Sez IT?</h2>
+    <p>
+      Our tutorials are designed for beginners and advanced users alike, offering clear, step-by-step guidance. You'll learn practical skills to boost efficiency, master shortcuts, and tackle real-world tasks with confidence.
+    </p>
+    <ul>
+      <li>Hands-on examples and real-world applications</li>
+      <li>Expert tips to save time and effort</li>
+      <li>Comprehensive coverage of MS Office tools</li>
+      <li>Interactive and engaging content for all skill levels</li>
+    </ul>
+
+    <div class="excel-section" id="excel">
+      <h2>MS Excel Tutorial</h2>
+      <img src="https://ms-excel.pages.dev/excel.svg.png" alt="MS Excel">
+      <p>
+        Microsoft Excel is the ultimate tool for data management, analysis, and visualization. From budgeting to forecasting, Excel's robust features help you organize and interpret data efficiently.
+      </p>
+      <ul>
+        <li>Navigate the Excel interface and ribbon</li>
+        <li>Master formulas like SUM, AVERAGE, IF, and VLOOKUP</li>
+        <li>Create dynamic charts and graphs</li>
+        <li>Leverage Pivot Tables for data summarization</li>
+        <li>Use Conditional Formatting for visual insights</li>
+        <li>Automate tasks with macros</li>
+      </ul>
+
+      <h3>Step-by-Step: Using Formulas</h3>
+      <div class="excel-step"><strong>Step 1:</strong> Open Excel and select a blank worksheet.</div>
+      <div class="excel-step"><strong>Step 2:</strong> Click a cell (e.g., A1) to enter a formula.</div>
+      <div class="excel-step"><strong>Step 3:</strong> Type <code>=</code> to start (e.g., <code>=SUM(B1:B5)</code>).</div>
+      <div class="excel-step"><strong>Step 4:</strong> Press <strong>Enter</strong> to see the result.</div>
+      <div class="excel-step"><strong>Example:</strong> For B1=10, B2=20, B3=30, <code equal>SUM(B1:B3)</code> returns 60.</div>
+      <p>
+        Explore advanced functions like <code>=INDEX(MATCH())</code> for dynamic lookups or <code>=IFERROR(A1/B1, "Error")</code> to handle errors gracefully.
+      </p>
+
+      <h3>Creating Charts</h3>
+      <div class="excel-step"><strong>Step 1:</strong> Enter and select your data (e.g., sales by month).</div>
+      <div class="excel-step"><strong>Step 2:</strong> Go to <strong>Insert</strong> > Choose chart type (e.g., Column, Pie).</div>
+      <div class="excel-step"><strong>Step 3:</strong> Customize with Chart Tools for titles, labels, and colors³ colors.</div>
+      <div class="excel-step"><strong>Tip:</strong> Use <strong>Recommended Charts</strong> for quick suggestions based on your data.</div>
+
+      <h3>Using Pivot Tables</h3>
+      <div class="excel-step"><strong>Step 1:</strong> Select data and go to <strong>Insert</strong> > <strong>PivotTable</strong>.</div>
+      <div class="excel-step"><strong>Step 2:</strong> Drag fields to Rows, Columns, or Values.</div>
+      <div class="excel-step"><strong>Step 3:</strong> Use Filters to refine data and create slicers for interactive dashboards.</div>
+
+      <h3>Real-World Example: Budget Tracking</h3>
+      <p>
+        Create a monthly budget tracker by entering income and expenses in a table. Use <code>=SUM</code> to calculate totals, apply Conditional Formatting to highlight overspending, and create a Pie Chart to visualize expense categories. Pivot Tables can summarize spending by category or month for quick insights.
+      </p>
+    </div>
+
+    <div class="word-section" id="word">
+      <h2>MS Word Tutorial</h2>
+      <img src="https://ms-excel.pages.dev/word.webp" alt="MS Word">
+      <p>
+        Microsoft Word is the go-to tool for creating polished documents, from resumes to business reports. Its versatile features make document creation and collaboration seamless.
+      </p>
+      <ul>
+        <li>Master the Word interface and ribbon</li>
+        <li>Format text with fonts, colors, and alignment</li>
+        <li>Insert tables, images, and hyperlinks</li>
+        <li>Use styles and headings for organized documents</li>
+        <li>Track changes for collaborative editing</li>
+        <li>Create mail merges for bulk letters</li>
+      </ul>
+
+      <h3>Formatting Text</h3>
+      <div class="excel-step"><strong>Step 1:</strong> Open Word and type text (e.g., a report title).</div>
+      <div class="excel-step"><strong>Step 2:</strong> Select text and use the <strong>Home</strong> tab for font, size, or bold/italic.</div>
+      <div class="excel-step"><strong>Step 3:</strong> Align text using alignment tools (center, justify).</div>
+
+      <h3>Inserting Tables and Images</h3>
+      <div class="excel-step"><strong>Step 1:</strong> Click <strong>Insert</strong> > <strong>Table</strong> or <strong>Pictures</strong>.</div>
+      <div class="excel-step"><strong>Step 2:</strong> Format tables with borders or resize images for a professional look.</div>
+      <div class="excel-step"><strong>Tip:</strong> Use <strong>Wrap Text</strong> to position images neatly within text.</div>
+
+      <h3>Using Styles and Headings</h3>
+      <div class="excel-step"><strong>Step 1:</strong> Highlight text and apply a style (e.g., Heading 1) from the <strong>Home</strong> tab.</div>
+      <div class="excel-step"><strong>Step 2:</strong> Generate a Table of Contents via <strong>References</strong> > <strong>Table of Contents</strong>.</div>
+
+      <h3>Real-World Example: Creating a Resume</h3>
+      <p>
+        Use Word’s templates to start a resume. Apply Heading styles for sections like "Experience" and "Education," insert a professional headshot, and use tables for a clean skills layout. Enable <strong>Track Changes</strong> to get feedback from peers before finalizing.
+      </p>
+    </div>
+
+    <div class="ppt-section" id="ppt">
+      <h2>MS PowerPoint Tutorial</h2>
+      <img src="https://ms-excel.pages.dev/images.png" alt="MS PowerPoint">
+      <p>
+        Microsoft PowerPoint transforms ideas into engaging presentations. Perfect for meetings, lectures, or pitches, it offers tools for stunning visuals and animations.
+      </p>
+      <ul>
+        <li>Navigate the PowerPoint interface</li>
+        <li>Design slides with layouts and themes</li>
+        <li>Add images, charts, and videos</li>
+        <li>Use animations and transitions for impact</li>
+        <li>Collaborate using comments and sharing</li>
+        <li>Practice with Presenter View</li>
+      </ul>
+
+      <h3>Creating a Presentation</h3>
+      <div class="excel-step"><strong>Step 1:</strong> Open PowerPoint and select a blank or themed presentation.</div>
+      <div class="excel-step"><strong>Step 2:</strong> Add a title slide and additional slides via <strong>Home</strong> > <strong>New Slide</strong>.</div>
+      <div class="excel-step"><strong>Step 3:</strong> Apply a theme from the <strong>Design</strong> tab.</div>
+      <div class="excel-step"><strong>Step 4:</strong> Save and press F5 to present.</div>
+
+      <h3>Adding Transitions and Animations</h3>
+      <div class="excel-step"><strong>Step 1:</strong> Select a slide or object.</div>
+      <div class="excel-step"><strong>Step 2:</strong> Go to <strong>Transitions</strong> or <strong>Animations</strong> and choose an effect.</div>
+      <div class="excel-step"><strong>Step 3:</strong> Adjust timing in the <strong>Animation Pane</strong> for precise control.</div>
+
+      <h3>Inserting Media</h3>
+      <div class="excel-step"><strong>Step 1:</strong> Go to <strong>Insert</strong> > <strong>Pictures</strong>, <strong>Video</strong>, or <strong>Chart</strong>.</div>
+      <div class="excel-step"><strong>Step 2:</strong> Format with ribbon tools for alignment and effects.</div>
+
+      <h3>Real-World Example: Pitch Deck</h3>
+      <p>
+        Create a pitch deck for a startup idea. Use a professional theme, add charts to show market data, and embed a short video demo. Apply subtle animations to text and images for a dynamic flow, and use <strong>Presenter View</strong> to keep notes handy during delivery.
+      </p>
+    </div>
+
+    <div class="outlook-section" id="outlook">
+      <h2>MS Outlook Tutorial</h2>
+      <img src="https://ms-excel.pages.dev/outlook.png" alt="MS Outlook">
+      <p>
+        Microsoft Outlook is a powerful tool for managing emails, calendars, contacts, and tasks, keeping you organized and productive.
+      </p>
+      <ul>
+        <li>Configure email accounts and settings</li>
+        <li>Organize emails with folders, rules, and categories</li>
+        <li>Schedule meetings and events with Calendar</li>
+        <li>Manage contacts and create task lists</li>
+        <li>Integrate with Teams for seamless collaboration</li>
+        <li>Use Quick Steps for repetitive tasks</li>
+      </ul>
+
+      <h3>Getting Started</h3>
+      <div class="excel-step"><strong>Step 1:</strong> Launch Outlook and add your email account.</div>
+      <div class="excel-step"><strong>Step 2:</strong> Manage emails in the Inbox with reply, forward, or flag options.</div>
+      <div class="excel-step"><strong>Step 3:</strong> Use Calendar to schedule meetings or events.</div>
+      <div class="excel-step"><strong>Step 4:</strong> Add contacts in People and tasks in Tasks.</div>
+
+      <h3>Organizing Emails</h3>
+      <div class="excel-step"><strong>Step 1:</strong> Create folders via right-click on Inbox > <strong>New Folder</strong>.</div>
+      <div class="excel-step"><strong>Step 2:</strong> Set rules via <strong>View</strong> > <strong>Manage Rules & Alerts</strong> to auto-sort emails.</div>
+      <div class="excel-step"><strong>Step 3:</strong> Use Categories to color-code emails for quick identification.</div>
+
+      <h3>Real-World Example: Team Scheduling</h3>
+      <p>
+        Plan a team meeting by creating an event in Calendar, inviting attendees, and attaching an agenda created in Word. Use <strong>Quick Steps</strong> to automate responses to common emails, and set up a rule to move project-related emails to a dedicated folder for easy access.
+      </p>
+    </div>
+
+    <div class="youtube-section" id="youtube">
+      <h2>Simon Sez IT YouTube Channel</h2>
+      <img src="https://ms-excel.pages.dev/youtube.png" alt="YouTube">
+      <p>
+        Explore our <a href="https://www.youtube.com/@SimonSezIT" target="_blank">Simon Sez IT YouTube Channel</a> for in-depth video tutorials on MS Office and more. Our channel offers free, high-quality content to complement these written guides, with detailed walkthroughs, tips, and tricks to enhance your skills.
+      </p>
+      <ul>
+        <li>Watch step-by-step Excel tutorials for beginners and advanced users</li>
+        <li>Learn Word formatting techniques through video demonstrations</li>
+        <li>Create engaging PowerPoint presentations with expert guidance</li>
+        <li>Master Outlook’s features with practical video examples</li>
+        <li>Subscribe for weekly updates and new tutorials</li>
+      </ul>
+      <p>
+       # Visit <a href="https://www.youtube.com/@SimonSezIT" target="_blank">Simon Sez IT on YouTube</a> to access hundreds of free videos and take your MS Office skills to the next level!
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Simon Sez IT | All Rights Reserved</p>
+  </footer>
+</body>
+
+</html>
